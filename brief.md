@@ -49,7 +49,8 @@ _Fuente: Instagram [@sabuesospasto](https://www.instagram.com/sabuesospasto/), f
 - Nombres y cargos del equipo médico (y tarjetas profesionales si quieren mostrarlas).
 - Lista de precios o servicios destacados que quieren empujar (planes, vacunación, peluquería?).
 - Testimonios autorizados por los tutores.
-- Dominio (supuesto: sabuesospasto.com) y hosting.
+- Dominio definitivo y hosting. Propuesta publicada temporalmente en https://sabuesos.marandev.co (GitHub Pages, `noindex`); al pasar al dominio final, actualizar canonical/OG/Schema y quitar `noindex`.
+- Imagen para compartir en redes (og:image 1200×630), pendiente de fotos reales.
 - Aprobación del rediseño de logo; archivos originales del logo actual (solo tenemos una versión de 320×320 px).
 - Si contratan Agenda Bot: servicios, duraciones, profesionales y horarios con cita para configurarlo.
 
