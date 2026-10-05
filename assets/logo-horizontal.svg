@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" role="img" aria-labelledby="t">
+  <title id="t">Sabuesos — Clínica Veterinaria</title>
+  <!-- Wordmark en Bricolage Grotesque ExtraBold. Para el archivo final, convertir texto a trazos. -->
+  <defs><clipPath id="c"><circle cx="60" cy="60" r="58"/></clipPath></defs>
+  <circle cx="60" cy="60" r="58" fill="#0E6B4E"/>
+  <g clip-path="url(#c)">
+    <path fill="#FBF7F0" d="M33 50 C33 34 45 25 60 26 C68 26.5 72 30 74 36 L77 44 C84 45 92 46 98 49 C102 51 103 56 101 60 C99 64 95 66 90 66 L77 67 C72 73 66 77 62 80 C64 92 70 106 78 124 L22 124 C28 104 33 84 33 66 Z"/>
+    <path fill="#F28C28" d="M40 38 C49 36 54 43 53 54 C52 66 49 80 43 86 C39 90 33 88 32 82 C30 70 31 50 34 43 C35 40 37 38.6 40 38 Z"/>
+    <circle cx="64" cy="43" r="3.4" fill="#12233D"/>
+    <ellipse cx="98.5" cy="53" rx="4.2" ry="3.6" fill="#12233D"/>
+  </g>
+  <path fill="#F28C28" d="M84 17h6v7h7v6h-7v7h-6v-7h-7v-6h7z"/>
+  <text x="138" y="70" font-family="'Bricolage Grotesque', 'Figtree', system-ui, sans-serif" font-weight="800" font-size="58" letter-spacing="-1.5" fill="#0E6B4E">sabuesos</text>
+  <text x="141" y="98" font-family="'Figtree', system-ui, sans-serif" font-weight="600" font-size="15.5" letter-spacing="3.2" fill="#12233D">CLÍNICA VETERINARIA · PASTO</text>
+</svg>

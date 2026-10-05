@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sabuesos | Propuesta de identidad</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/isotipo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ---------- Página de identidad ---------- */
+    .id-hero { min-height: 78vh; display: grid; place-items: center; text-align: center; background: var(--cream); padding: var(--spacing-8) 0; }
+    .id-hero .lockup-v { display: grid; justify-items: center; gap: var(--spacing-4); }
+    .id-hero .iso { width: clamp(140px, 22vw, 220px); height: clamp(140px, 22vw, 220px); }
+    .wordmark { font: 800 clamp(3rem, 2rem + 5vw, 6rem)/0.9 var(--font-display); color: var(--green); letter-spacing: -0.045em; }
+    .descriptor { font: 600 clamp(0.75rem, 0.7rem + 0.3vw, 0.95rem)/1 var(--font-body); letter-spacing: 0.28em; text-transform: uppercase; color: var(--navy); }
+    .id-hero .concept { margin-top: var(--spacing-6); font-size: var(--fs-lg); color: var(--navy-soft); max-width: 46ch; margin-inline: auto; }
+
+    .lockup-h { display: flex; align-items: center; gap: 0.9em; }
+    .lockup-h svg { width: 2.6em; height: 2.6em; flex: none; }
+    .lockup-h .wm { font: 800 1em/0.9 var(--font-display); letter-spacing: -0.04em; }
+    .lockup-h .ds { display: block; font: 600 0.24em/1 var(--font-body); letter-spacing: 0.26em; text-transform: uppercase; margin-top: 0.55em; }
+
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-5); }
+    .compare-card { border-radius: var(--radius-lg); padding: var(--spacing-6); background: var(--white); border: 1px solid var(--line); }
+    .compare-card h3 { margin-bottom: var(--spacing-4); }
+    .compare-card ul { margin: 0; padding-left: 1.2rem; display: grid; gap: var(--spacing-2); color: var(--navy-soft); }
+    .compare-card--new { background: var(--green); color: var(--white); border-color: var(--green); }
+    .compare-card--new ul { color: #D7EDE3; }
+    .slot { aspect-ratio: 16 / 9; border-radius: var(--radius); border: 2px dashed var(--line); display: grid; place-items: center; margin-bottom: var(--spacing-5); color: var(--navy-soft); font-size: var(--fs-sm); background: var(--cream); text-align: center; padding: var(--spacing-4); }
+    .slot img { width: auto; height: 100%; object-fit: contain; }
+    .slot--img { background: #fff; border-style: solid; padding: var(--spacing-3); }
+    .slot--new { background: var(--cream); border-style: solid; border-color: transparent; }
+    @media (max-width: 760px) { .compare { grid-template-columns: 1fr; } }
+
+    .anatomy { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-7); align-items: center; }
+    .anatomy-figure { position: relative; max-width: 420px; width: 100%; aspect-ratio: 1; margin-inline: auto; }
+    .anatomy-figure svg { width: 100%; height: 100%; }
+    .anatomy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--spacing-4); }
+    .anatomy-list li { display: grid; grid-template-columns: 40px 1fr; gap: var(--spacing-4); align-items: start; }
+    .anatomy-list .n { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--orange); color: var(--navy); font: 800 1rem var(--font-display); }
+    .anatomy-list p { color: var(--navy-soft); font-size: var(--fs-sm); margin-top: var(--spacing-1); }
+    .pin { position: absolute; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: var(--white); display: grid; place-items: center; font: 800 0.85rem var(--font-display); border: 3px solid var(--white); box-shadow: var(--shadow-sm); transform: translate(-50%, -50%); }
+    @media (max-width: 760px) { .anatomy { grid-template-columns: 1fr; } }
+
+    .versions { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-4); }
+    .version { border-radius: var(--radius-lg); min-height: 220px; display: grid; place-items: center; padding: var(--spacing-6); position: relative; font-size: clamp(2rem, 1.6rem + 1.4vw, 2.6rem); }
+    .version small { position: absolute; left: var(--spacing-4); bottom: var(--spacing-3); font: 600 var(--fs-xs) var(--font-body); opacity: 0.75; letter-spacing: 0.04em; }
+    .v-cream { background: var(--white); border: 1px solid var(--line); color: var(--green); }
+    .v-cream .ds { color: var(--navy); }
+    .v-green { background: var(--green); color: var(--white); }
+    .v-navy { background: var(--navy); color: var(--white); }
+    .v-navy .wm { color: var(--white); }
+    .v-orange { background: var(--orange); color: var(--navy); }
+    .v-mono { background: var(--white); border: 1px solid var(--line); color: #111; }
+    .v-wide { grid-column: span 2; }
+    @media (max-width: 860px) { .versions { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .versions { grid-template-columns: 1fr; } .v-wide { grid-column: auto; } }
+
+    .sizes { display: flex; align-items: flex-end; gap: var(--spacing-6); flex-wrap: wrap; margin-top: var(--spacing-6); }
+    .sizes figure { margin: 0; display: grid; justify-items: center; gap: var(--spacing-2); font-size: var(--fs-xs); color: var(--navy-soft); }
+
+    .palette { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--spacing-4); }
+    .swatch { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: var(--white); }
+    .swatch div { height: 110px; }
+    .swatch p { padding: var(--spacing-3) var(--spacing-4); font-size: var(--fs-sm); }
+    .swatch strong { display: block; }
+    .swatch code { font-size: var(--fs-xs); color: var(--navy-soft); }
+
+    .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-4); }
+    .type-card { background: var(--white); border-radius: var(--radius-lg); padding: var(--spacing-6); border: 1px solid var(--line); }
+    .type-card .aa { font-size: 5rem; line-height: 1; color: var(--green); }
+    .type-card p { color: var(--navy-soft); margin-top: var(--spacing-3); }
+    @media (max-width: 760px) { .type-grid { grid-template-columns: 1fr; } }
+
+    .apps { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--spacing-4); }
+    .app { border-radius: var(--radius-lg); overflow: hidden; position: relative; min-height: 260px; display: grid; place-items: center; padding: var(--spacing-5); }
+    .app > small { position: absolute; left: var(--spacing-4); top: var(--spacing-3); font: 700 var(--fs-xs) var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
+    .app-sign { grid-column: span 4; background: linear-gradient(#cfd8d3, #b9c4be); }
+    .sign { background: var(--navy); color: var(--white); border-radius: 12px; padding: 1.4rem 2rem; box-shadow: 0 20px 40px -18px rgba(0,0,0,0.5); font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem); display: grid; gap: 0.9rem; justify-items: start; width: min(100%, 560px); }
+    .sign .wm { color: var(--white); }
+    .sign .ds { color: var(--orange); }
+    .sign-line { font: 700 0.38em/1.3 var(--font-body); color: #C9D2E0; letter-spacing: 0.06em; display: flex; flex-wrap: wrap; gap: 0.4em 1.2em; }
+    .sign-urg { font: 800 0.5em var(--font-display); color: var(--navy); background: var(--orange); padding: 0.25em 0.7em; border-radius: 999px; }
+    .app-ig { grid-column: span 2; background: #fff; border: 1px solid var(--line); }
+    .ig { display: grid; justify-items: center; gap: var(--spacing-3); text-align: center; }
+    .ig-ring { padding: 4px; border-radius: 50%; background: conic-gradient(var(--orange), var(--green-leaf), var(--green), var(--orange)); }
+    .ig-ring svg { width: 112px; height: 112px; border-radius: 50%; border: 4px solid #fff; }
+    .ig strong { font-size: var(--fs-sm); }
+    .ig span { font-size: var(--fs-xs); color: var(--navy-soft); max-width: 24ch; }
+    .app-shirt { grid-column: span 2; background: #1c1f24; }
+    .scrub { width: 170px; height: 190px; background: #2a2e35; border-radius: 40px 40px 14px 14px; position: relative; box-shadow: inset 0 -10px 30px rgba(0,0,0,0.35); }
+    .scrub::before { content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 60px; height: 40px; background: #1c1f24; clip-path: polygon(0 0, 100% 0, 50% 100%); }
+    .scrub .patch { position: absolute; right: 26px; top: 58px; font-size: 0.95rem; color: #fff; }
+    .scrub .patch .ds { color: var(--orange); }
+    .app-card { grid-column: span 2; background: var(--orange-tint); }
+    .vcard { width: min(100%, 260px); aspect-ratio: 1.6; background: var(--green); color: var(--white); border-radius: 14px; padding: 1rem 1.1rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 20px 30px -18px rgba(18,35,61,0.6); font-size: 1.15rem; transform: rotate(-4deg); }
+    .vcard p { font: 600 0.62rem/1.4 var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: #D7EDE3; }
+    .app-tab { grid-column: span 2; background: var(--navy); }
+    .browser { width: min(100%, 280px); background: #E9ECF1; border-radius: 12px 12px 0 0; padding: 10px 10px 0; }
+    .browser .tab { background: #fff; border-radius: 10px 10px 0 0; padding: 8px 12px; display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--navy); width: 82%; }
+    .browser .tab svg { width: 18px; height: 18px; }
+    @media (max-width: 960px) { .apps { grid-template-columns: repeat(2, 1fr); } .app-sign { grid-column: span 2; } .app-ig, .app-shirt, .app-card, .app-tab { grid-column: span 1; } }
+    @media (max-width: 560px) { .apps { grid-template-columns: 1fr; } .app-sign, .app-ig, .app-shirt, .app-card, .app-tab { grid-column: auto; } }
+
+    .back-link { display: inline-flex; gap: var(--spacing-2); align-items: center; font-weight: 700; text-decoration: none; color: var(--green); }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs><clipPath id="iso-clip"><circle cx="60" cy="60" r="58"/></clipPath></defs>
+    <symbol id="iso" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="58" fill="#0E6B4E"/>
+      <g clip-path="url(#iso-clip)">
+        <path fill="#FBF7F0" d="M33 50 C33 34 45 25 60 26 C68 26.5 72 30 74 36 L77 44 C84 45 92 46 98 49 C102 51 103 56 101 60 C99 64 95 66 90 66 L77 67 C72 73 66 77 62 80 C64 92 70 106 78 124 L22 124 C28 104 33 84 33 66 Z"/>
+        <path fill="#F28C28" d="M40 38 C49 36 54 43 53 54 C52 66 49 80 43 86 C39 90 33 88 32 82 C30 70 31 50 34 43 C35 40 37 38.6 40 38 Z"/>
+        <circle cx="64" cy="43" r="3.4" fill="#12233D"/>
+        <ellipse cx="98.5" cy="53" rx="4.2" ry="3.6" fill="#12233D"/>
+      </g>
+      <path fill="#F28C28" d="M84 17h6v7h7v6h-7v7h-6v-7h-7v-6h7z"/>
+    </symbol>
+    <!-- Versión sobre fondo verde: círculo crema, perro verde -->
+    <symbol id="iso-inv" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="58" fill="#FBF7F0"/>
+      <g clip-path="url(#iso-clip)">
+        <path fill="#0E6B4E" d="M33 50 C33 34 45 25 60 26 C68 26.5 72 30 74 36 L77 44 C84 45 92 46 98 49 C102 51 103 56 101 60 C99 64 95 66 90 66 L77 67 C72 73 66 77 62 80 C64 92 70 106 78 124 L22 124 C28 104 33 84 33 66 Z"/>
+        <path fill="#F28C28" d="M40 38 C49 36 54 43 53 54 C52 66 49 80 43 86 C39 90 33 88 32 82 C30 70 31 50 34 43 C35 40 37 38.6 40 38 Z"/>
+        <circle cx="64" cy="43" r="3.4" fill="#FBF7F0"/>
+        <ellipse cx="98.5" cy="53" rx="4.2" ry="3.6" fill="#12233D"/>
+      </g>
+      <path fill="#F28C28" d="M84 17h6v7h7v6h-7v7h-6v-7h-7v-6h7z"/>
+    </symbol>
+    <!-- Monocromo: una sola tinta (bordado, sellos, grabado) -->
+    <symbol id="iso-mono" viewBox="0 0 120 120">
+      <defs><mask id="mono-mask"><rect width="120" height="120" fill="#fff"/>
+        <g clip-path="url(#iso-clip)"><path fill="#000" d="M33 50 C33 34 45 25 60 26 C68 26.5 72 30 74 36 L77 44 C84 45 92 46 98 49 C102 51 103 56 101 60 C99 64 95 66 90 66 L77 67 C72 73 66 77 62 80 C64 92 70 106 78 124 L22 124 C28 104 33 84 33 66 Z"/></g>
+        <path fill="#fff" d="M40 38 C49 36 54 43 53 54 C52 66 49 80 43 86 C39 90 33 88 32 82 C30 70 31 50 34 43 C35 40 37 38.6 40 38 Z"/>
+        <circle cx="64" cy="43" r="3.4" fill="#fff"/><ellipse cx="98.5" cy="53" rx="4.2" ry="3.6" fill="#fff"/>
+        <path fill="#000" d="M84 17h6v7h7v6h-7v7h-6v-7h-7v-6h7z"/>
+      </mask></defs>
+      <circle cx="60" cy="60" r="58" fill="currentColor" mask="url(#mono-mask)"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Volver a la propuesta del sitio">
+        <svg aria-hidden="true"><use href="#iso"/></svg>
+        <span><span class="brand-name">sabuesos</span><span class="brand-sub">Propuesta de identidad</span></span>
+      </a>
+      <a class="back-link" href="index.html">← Ver el sitio</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Portada -->
+    <section class="id-hero" aria-labelledby="id-title">
+      <div class="container">
+        <div class="lockup-v">
+          <svg class="iso" role="img" aria-label="Isotipo de Sabuesos"><use href="#iso"/></svg>
+          <h1 id="id-title" class="wordmark">sabuesos</h1>
+          <p class="descriptor">Clínica Veterinaria · Pasto</p>
+        </div>
+        <p class="concept">El olfato de un especialista, la calma de casa. Una renovación que conserva el verde y el naranja que Pasto ya reconoce, y los ordena en un símbolo que funciona en cualquier tamaño.</p>
+      </div>
+    </section>
+
+    <!-- Antes / después -->
+    <section class="section" style="background:var(--white)" aria-labelledby="dx-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">01 · Diagnóstico</p>
+          <h2 id="dx-title">Por qué renovar el logo</h2>
+          <p>La marca actual tiene buena recordación de color, pero no está construida para crecer: no escala, no se imprime en una tinta y cambia de nombre según la pieza.</p>
+        </div>
+        <div class="compare">
+          <article class="compare-card">
+            <div class="slot slot--img"><img src="assets/logo-actual.png" width="320" height="320" alt="Logo actual de Sabuesos: fotografía de un beagle con gafas sobre fondo naranja y verde, y la palabra Sabuesos en letra cursiva verde con el subtítulo Centro Veterinario y Odontológico"></div>
+            <h3>Hoy</h3>
+            <ul>
+              <li>Usa una <strong>fotografía</strong> (el beagle con gafas) dentro del logo: no se puede bordar, grabar ni imprimir a una tinta, y su calidad depende de la resolución de la foto.</li>
+              <li>En el avatar de Instagram y el favicon el perro y el texto se vuelven ilegibles.</li>
+              <li>Letra cursiva con contorno: la “S” y la “b” se confunden y cuesta leer “Sabuesos” a distancia o en tamaño pequeño.</li>
+              <li>“Centro Veterinario y Odontológico” (logo), “Centro Veterinario” (fachada), “Clínica Veterinaria” (Instagram): tres nombres distintos, y el subtítulo es ilegible en el avatar.</li>
+            </ul>
+          </article>
+          <article class="compare-card compare-card--new">
+            <div class="slot slot--new"><span class="lockup-h" style="font-size:2.4rem;color:var(--green)"><svg aria-hidden="true"><use href="#iso"/></svg><span><span class="wm">sabuesos</span><span class="ds" style="color:var(--navy)">Clínica Veterinaria</span></span></span></div>
+            <h3>Propuesta</h3>
+            <ul>
+              <li>El beagle sigue siendo el protagonista, ahora ilustrado: nítido de 16 px a una fachada.</li>
+              <li>Funciona a color, a una tinta, en negativo y bordada.</li>
+              <li>Wordmark limpio en minúscula: cercano y fácil de leer.</li>
+              <li>Un solo descriptor para todo: <strong>Clínica Veterinaria</strong>.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anatomía -->
+    <section class="section" aria-labelledby="an-title">
+      <div class="container anatomy">
+        <div class="anatomy-figure">
+          <svg role="img" aria-label="Isotipo con sus partes señaladas"><use href="#iso"/></svg>
+          <span class="pin" style="left:86%;top:38%">1</span>
+          <span class="pin" style="left:35%;top:52%">2</span>
+          <span class="pin" style="left:73%;top:9%">3</span>
+          <span class="pin" style="left:53%;top:27%">4</span>
+        </div>
+        <div>
+          <div class="section-head" style="margin-bottom:2rem">
+            <p class="eyebrow">02 · Concepto</p>
+            <h2 id="an-title">Un sabueso con olfato clínico</h2>
+          </div>
+          <ol class="anatomy-list">
+            <li><span class="n">1</span><div><h3>La nariz al frente</h3><p>El beagle del logo de siempre, ahora de perfil. El sabueso es el perro que encuentra lo que otros no ven: la metáfora del buen diagnóstico.</p></div></li>
+            <li><span class="n">2</span><div><h3>La oreja naranja</h3><p>El rasgo más reconocible de un sabueso y el naranja que ya tiene la marca. Se usa también como recurso gráfico.</p></div></li>
+            <li><span class="n">3</span><div><h3>La cruz</h3><p>Salud y urgencias. Pequeña, pero suficiente para leer “clínica” a primera vista.</p></div></li>
+            <li><span class="n">4</span><div><h3>Mirada tranquila</h3><p>Ojo sereno y formas redondas: transmite calma a un tutor que llega preocupado.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Versiones -->
+    <section class="section" style="background:var(--white)" aria-labelledby="ver-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">03 · Versiones</p>
+          <h2 id="ver-title">Un sistema, no una sola imagen</h2>
+        </div>
+        <div class="versions">
+          <div class="version v-cream v-wide">
+            <span class="lockup-h"><svg aria-hidden="true"><use href="#iso"/></svg><span><span class="wm">sabuesos</span><span class="ds">Clínica Veterinaria · Pasto</span></span></span>
+            <small>Horizontal · principal</small>
+          </div>
+          <div class="version v-cream" style="font-size:1rem">
+            <span style="display:grid;justify-items:center;gap:.6rem"><svg style="width:84px;height:84px" aria-hidden="true"><use href="#iso"/></svg><span class="wm" style="font:800 2.2rem/1 var(--font-display);letter-spacing:-.04em;color:var(--green)">sabuesos</span></span>
+            <small>Vertical</small>
+          </div>
+          <div class="version v-green">
+            <span class="lockup-h"><svg aria-hidden="true"><use href="#iso-inv"/></svg><span><span class="wm">sabuesos</span><span class="ds">Clínica Veterinaria</span></span></span>
+            <small>Negativo sobre verde</small>
+          </div>
+          <div class="version v-navy">
+            <span class="lockup-h"><svg aria-hidden="true"><use href="#iso"/></svg><span><span class="wm">sabuesos</span><span class="ds" style="color:var(--orange)">Clínica Veterinaria</span></span></span>
+            <small>Sobre azul noche</small>
+          </div>
+          <div class="version v-mono">
+            <span class="lockup-h"><svg aria-hidden="true"><use href="#iso-mono"/></svg><span><span class="wm">sabuesos</span><span class="ds">Clínica Veterinaria</span></span></span>
+            <small>Una tinta</small>
+          </div>
+        </div>
+
+        <div class="sizes" aria-label="Isotipo a distintos tamaños">
+          <figure><svg width="96" height="96" aria-hidden="true"><use href="#iso"/></svg>96 px</figure>
+          <figure><svg width="48" height="48" aria-hidden="true"><use href="#iso"/></svg>48 px</figure>
+          <figure><svg width="32" height="32" aria-hidden="true"><use href="#iso"/></svg>32 px</figure>
+          <figure><svg width="16" height="16" aria-hidden="true"><use href="#iso"/></svg>16 px · favicon</figure>
+          <figure style="color:var(--navy)"><svg width="48" height="48" aria-hidden="true"><use href="#iso-mono"/></svg>Una tinta</figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color -->
+    <section class="section" aria-labelledby="col-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">04 · Color</p>
+          <h2 id="col-title">Los colores de siempre, afinados</h2>
+          <p>Verde y naranja del logo actual, más el azul del letrero de la fachada. Ajustados para cumplir contraste de accesibilidad en pantalla.</p>
+        </div>
+        <div class="palette">
+          <div class="swatch"><div style="background:#0E6B4E"></div><p><strong>Verde Sabuesos</strong><code>#0E6B4E</code></p></div>
+          <div class="swatch"><div style="background:#3FA77A"></div><p><strong>Verde hoja</strong><code>#3FA77A</code></p></div>
+          <div class="swatch"><div style="background:#F28C28"></div><p><strong>Naranja oreja</strong><code>#F28C28</code></p></div>
+          <div class="swatch"><div style="background:#12233D"></div><p><strong>Azul noche</strong><code>#12233D</code></p></div>
+          <div class="swatch"><div style="background:#FBF7F0"></div><p><strong>Crema</strong><code>#FBF7F0</code></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tipografía -->
+    <section class="section" style="background:var(--white)" aria-labelledby="tip-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">05 · Tipografía</p>
+          <h2 id="tip-title">Amable para leer, firme para confiar</h2>
+        </div>
+        <div class="type-grid">
+          <div class="type-card"><div class="aa" style="font-family:var(--font-display);font-weight:800">Aa</div><h3>Bricolage Grotesque</h3><p>Logotipo y titulares. Formas abiertas con carácter, sin perder seriedad médica.</p></div>
+          <div class="type-card"><div class="aa" style="font-family:var(--font-body);font-weight:700">Aa</div><h3>Figtree</h3><p>Textos, botones y señalética. Muy legible en celulares y a distancia.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aplicaciones -->
+    <section class="section" aria-labelledby="app-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">06 · Aplicaciones</p>
+          <h2 id="app-title">Así se vería en el día a día</h2>
+        </div>
+        <div class="apps">
+          <div class="app app-sign">
+            <small>Letrero de fachada</small>
+            <div class="sign">
+              <span class="lockup-h"><svg aria-hidden="true"><use href="#iso"/></svg><span><span class="wm">sabuesos</span><span class="ds">Clínica Veterinaria</span></span></span>
+              <span class="sign-line"><span>Cardiología</span><span>Oncología</span><span>Ortopedia</span><span>Etología</span><span>Cirugía</span><span>Ecografía</span><span>Laboratorio</span></span>
+              <span class="sign-urg">Urgencias 24 h · 314 850 7581</span>
+            </div>
+          </div>
+          <div class="app app-ig">
+            <small>Perfil de Instagram</small>
+            <div class="ig">
+              <span class="ig-ring"><svg aria-hidden="true"><use href="#iso"/></svg></span>
+              <strong>sabuesospasto</strong>
+              <span>Clínica Veterinaria · Urgencias 24/7</span>
+            </div>
+          </div>
+          <div class="app app-shirt">
+            <small style="color:#fff">Uniforme bordado</small>
+            <div class="scrub"><span class="patch lockup-h" style="font-size:.95rem"><svg aria-hidden="true" style="color:#fff"><use href="#iso-mono"/></svg><span><span class="wm">sabuesos</span></span></span></div>
+          </div>
+          <div class="app app-card">
+            <small>Carné de vacunación</small>
+            <div class="vcard">
+              <span class="lockup-h" style="font-size:1.15rem"><svg aria-hidden="true"><use href="#iso-inv"/></svg><span><span class="wm">sabuesos</span></span></span>
+              <p>Carné de salud<br>Paciente: ______________</p>
+            </div>
+          </div>
+          <div class="app app-tab">
+            <small style="color:#fff">Pestaña del navegador</small>
+            <div class="browser"><div class="tab"><svg aria-hidden="true"><use href="#iso"/></svg> Sabuesos | Clínica Ve…</div></div>
+          </div>
+        </div>
+        <p style="margin-top:2rem;color:var(--navy-soft);font-size:var(--fs-sm)">Propuesta de <a href="https://marandev.co" target="_blank" rel="noopener" style="color:var(--green);font-weight:700">marandev.co</a> para Sabuesos. Al aprobarse se entregan archivos finales en SVG, PDF y PNG (texto convertido a trazos), y un manual de marca breve.</p>
+        <p style="margin-top:1rem"><a class="back-link" href="index.html">← Volver a la propuesta del sitio</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
